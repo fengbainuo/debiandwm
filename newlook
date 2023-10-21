@@ -1,0 +1,10 @@
+#!/bin/sh
+
+# Get one image from the wallpapers folder
+wall=$(find /home/beni/wallpapers -iname "*.jpg" -o -name "*.png" -o -name "*.webp" | shuf -n 1)
+
+# Pass on the image to pywal
+wal -i $wall
+
+# Refresh dwm
+xdotool key --clearmodifiers super+F5

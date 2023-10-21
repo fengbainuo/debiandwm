@@ -1,0 +1,8 @@
+#!/bin/sh
+
+# Get the artist and the title
+artist=$(mpc current --format %artist%)
+title=$(mpc current --format %title%)
+
+# Output it
+echo "$artist - $title"

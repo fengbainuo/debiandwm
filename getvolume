@@ -1,0 +1,12 @@
+# Get volume status (on/off)
+volume_status=$(amixer sget Master)
+
+# Get volume percentage
+volume=$(amixer sget Master | grep -o -m 1 "[0-9]*%")
+
+# Check if volume is muted and print the outpu
+if echo "$volume_status" | grep -q "\[off\]"; then
+    echo "MUTED - $volume"
+else
+    echo "$volume"
+fi

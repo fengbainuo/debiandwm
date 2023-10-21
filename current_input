@@ -1,0 +1,11 @@
+#!/bin/sh
+
+active_input=$(fcitx-remote)
+
+if [ $active_input = 1 ]; then
+    echo "hu"
+elif [ $active_input = 2 ]; then
+    echo "中"
+else
+    echo "n/a"
+fi
